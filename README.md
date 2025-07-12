@@ -1,5 +1,5 @@
 This is a practical example of how to integrate the **Zustack API** into 
-a full-stack application using **Go** and **React**.
+a full-stack video application using **Go** and **React**.
 
 ---
 
@@ -36,4 +36,7 @@ cd image-gallery
 go run cmd/main.go
 ```
 
-Now open the on http://localhost:8081.
+Now open the app on your browser
+```bash 
+http://localhost:8081
+```

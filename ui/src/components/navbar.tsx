@@ -58,7 +58,7 @@ export default function Navbar() {
                   logout();
                   navigate("/");
                 }}
-                className="flex gap-2"
+                className="flex gap-2 cursor-pointer"
               >
                 <LogOut className="w-4 h-4 text-zinc-300" />
                 Logout

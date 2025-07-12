@@ -36,7 +36,7 @@ export default function Signup() {
     <div className="flex justify-center pt-[150px]">
       <form
         onSubmit={handleSubmit}
-        className="grid gap-2 w-[400px] border p-[20px] rounded-md bg-muted"
+        className="grid gap-2 w-[400px] border p-[20px] rounded-md bg-secondary/80"
       >
         <h5 className="text-2xl text-center pb-[10px]">Sign up</h5>
         <div className="grid gap-2 mb-4">

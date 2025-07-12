@@ -27,10 +27,11 @@ export default function Video() {
 
       {isLoading && (
         <div className="flex flex-col gap-[5px]">
-          <Skeleton className="rounded-md w-full h-[370px]" />
+          <Skeleton className="rounded-md w-full h-[400px]" />
         </div>
       )}
 
+      <h5 className="text-2xl">{data?.body}</h5>
       <div style={{ position: "relative", paddingTop: "56.25%" }}>
         <iframe
           ref={iframeRef}

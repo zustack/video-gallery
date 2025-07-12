@@ -59,20 +59,26 @@ export default function Gallery() {
           {data?.data?.map((post: Post, index: number) => (
             <div key={post.id}>
               <div className="flex flex-col gap-[5px]">
-                <Link to={`/video/${post.id}`}>
+                <Link
+                  className="hover:bg-secondary/80 border border-secondary/80 p-4 rounded-md"
+                  to={`/video/${post.id}`}
+                >
                   <LoadImage
                     cn="rounded-md w-full h-[400px]"
                     src={`${post.thumbnail}?jwt=${data.jwt}`}
                   />
-                  <p>{post.body}</p>
+                  <div className="flex justify-between pt-2">
+                  <div className="flex flex-col gap-2">
+                  <h5 className="text-xl">{post.body}</h5>
                   <p className="text-muted-foreground text-sm">
                     {post.created_at}
                   </p>
+                  </div>
                   {userId == post.user_id && (
                     <Button
                       onClick={(e) => {
-                        e.stopPropagation(); 
-                        e.preventDefault(); 
+                        e.stopPropagation();
+                        e.preventDefault();
                         setCurrentID(post.id);
                         deletePostMutation.mutate(post.id);
                       }}
@@ -84,6 +90,7 @@ export default function Gallery() {
                       Delete post
                     </Button>
                   )}
+                  </div>
                 </Link>
               </div>
               {index !== data.data.length - 1 && (
