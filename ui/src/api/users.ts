@@ -1,4 +1,4 @@
-import { authAxios, noAuthAxios } from "@/lib/axios-instance";
+import { noAuthAxios } from "@/lib/axios-instance";
 
 export const login = async (
   email: string,

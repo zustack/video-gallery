@@ -19,6 +19,10 @@ func Server() *fiber.App {
 		AllowOrigins:     "*",
 		AllowCredentials: false,
 	}))
+
+  app.Static("/", "./ui/dist")            
+  app.Static("/assets", "./ui/dist/assets")
+
 	app.Use("/ws", func(c *fiber.Ctx) error {
 		if websocket.IsWebSocketUpgrade(c) {
 			return c.Next()
@@ -29,5 +33,8 @@ func Server() *fiber.App {
 	routes.WsRoutes(app)
 	routes.PostRoutes(app)
 	routes.UserRoutes(app)
+	app.All("*", func(c *fiber.Ctx) error {
+		return c.SendFile("./ui/dist/index.html")
+	})
 	return app
 }
