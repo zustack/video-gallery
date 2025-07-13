@@ -1,9 +1,25 @@
-This is a practical example of how to integrate the **Zustack API** into 
-a full-stack video application using **Go** and **React**.
+# 🎬 Video Gallery with Zustack
+
+This is a practical example of how to use the **Zustack API** with **Go** 
+and **React**.
+It demonstrates how to upload videos to the Zustack network, delete them and 
+display 
+them efficiently in a web application.
 
 ---
 
-## Set up the database
+## 🚀 How to Use
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/zustack/video-gallery.git ~/video-gallery
+cd ~/video-gallery
+```
+
+---
+
+### 2. Set Up the Database
 
 Run the following command to create the necessary tables in the SQLite database:
 
@@ -13,30 +29,28 @@ sqlite3 db.db ".read tables.sql"
 
 ---
 
-## Export the required environment variables
+### 3. Export Required Environment Variables
 
-Before running the app, make sure to export the required environment variables:
+Create a `.env.sh` file and add your environment variables:
 
 ```bash
-export DB_PATH=/absolute/path/to/db.db
+echo "export DB_PATH=/absolute/path/to/db.db
 export SECRET_KEY=your_secret_key
 export API_KEY_ZUSTACK=your_zustack_api_key
 export BUCKET_ID=your_bucket_id
-export ZUSTACK_URL=zustack_url
+export ZUSTACK_URL=zustack_url" > .env.sh
 ```
 
-> You can also put these variables in a `.env.sh` file and run `source .env.sh` 
-to load them automatically.
+Then load the environment:
 
-## How to use
-Clone the repo and run
 ```bash
-git clone https://github.com/zustack/image-gallery.git ~/image-gallery
-cd image-gallery
-go run cmd/main.go
+source .env.sh
 ```
 
-Now open the app on your browser
-```bash 
-http://localhost:8081
+---
+
+### 4. Run the Project
+
+```bash
+./video-gallery
 ```

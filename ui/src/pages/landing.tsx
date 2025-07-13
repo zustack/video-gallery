@@ -7,10 +7,14 @@ export default function Landing() {
         <h1 className="scroll-m-20 text-3xl font-semibold lg:text-4xl text-center">
           <span>Video Gallery</span>
         </h1>
-        <p className="text-center text-foreground pt-[50px]">
+        <p className="text-center text-foreground/80 pt-[50px] text-xl">
           <span>
-            This is a practical example of how to integrate the Zustack API into
-            a full-stack video application using Go and React.
+            This is a practical example of how to use the Zustack API with Go
+            and React.
+          </span>
+          <span className="block">
+            It demonstrates how to upload videos to the Zustack network, delete
+            them and display them efficiently in a web application.
           </span>
           <span className="block">
             Login to see the gallery and upload videos.
