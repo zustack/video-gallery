@@ -54,3 +54,5 @@ source .env.sh
 ```bash
 ./video-gallery
 ```
+
+> 📍 **App is running at:** [http://localhost:8081](http://localhost:8081)
