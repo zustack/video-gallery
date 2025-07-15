@@ -44,7 +44,7 @@ export const uploadVideoZustack = async ({
     formData.append("thumbnail", thumbnail, thumbnail.name);
   }
   const response = await axios.post(
-    `http://localhost:8080/files/upload/video/${BUCKET_ID}`,
+    `https://zustack.com/files/upload/video/${BUCKET_ID}`,
     formData,
     {
       headers: {
@@ -60,7 +60,7 @@ export const getResolution = async (file: File, jwt: string) => {
   const formData = new FormData();
   formData.append("file", file, file.name);
   const response = await axios.post(
-    `http://localhost:8080/files/resolution/video/${BUCKET_ID}`,
+    `https://zustack.com/files/resolution/video/${BUCKET_ID}`,
     formData,
     {
       headers: {
@@ -84,24 +84,6 @@ export const getPosts = async () => {
 
 export const getSignUrl = async (scope: string) => {
   const response = await authAxios.post(`/posts/signurl/${scope}`);
-  return response.data;
-};
-
-export const uploadImageZustack = async (jwt: string, file: File) => {
-  const formData = new FormData();
-  formData.append("file", file);
-  formData.append("access", "private");
-  formData.append("webp", "yes");
-  const response = await axios.post(
-    `http://localhost:8080/upload/image/${BUCKET_ID}`,
-    formData,
-    {
-      headers: {
-        Authorization: `Bearer ${jwt}`,
-        "Content-Type": "multipart/form-data",
-      },
-    }
-  );
   return response.data;
 };
 
