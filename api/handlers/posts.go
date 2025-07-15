@@ -97,7 +97,7 @@ func GetPosts(c *fiber.Ctx) error {
 		return c.Status(500).SendString(err.Error())
 	}
 	secondsToByValid := 60 * 60
-	token, err := utils.GenerateJWT(os.Getenv("API_KEY_ZUSTACK"), "Read", "", secondsToByValid)
+	token, err := utils.GenerateJWT(os.Getenv("API_KEY_ZUSTACK"), "read", "", secondsToByValid)
 	if err != nil {
 		return c.Status(401).SendString(err.Error())
 	}
